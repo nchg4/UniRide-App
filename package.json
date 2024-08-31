@@ -18,8 +18,8 @@
     "express": "^4.19.2",
     "leaflet": "^1.9.4",
     "node-fetch": "^3.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.26.1",
     "react-scripts": "^5.0.0",
@@ -39,5 +39,17 @@
   },
   "engines": {
     "node": "20.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
