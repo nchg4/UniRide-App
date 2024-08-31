@@ -1,10 +1,15 @@
 import React from 'react';
 import './Header.css';
+import logo from './assets/Screenshot.png'; 
 
 const Header = () => {
   return (
     <header>
-      <h1>UniRide</h1>
+      <img 
+        src={logo} 
+        alt="UniRide Logo" 
+        style={{ width: '20%', height: '40%' }} 
+      />
     </header>
   );
 };

@@ -14,18 +14,17 @@ const RideList = () => {
   };
 
   const handleRideClick = (ride) => {
-    setSelectedRide(ride); // Show ride details when clicked
+    setSelectedRide(ride); 
   };
 
   const clearRides = () => {
-    localStorage.removeItem('rides'); // Clear the rides from local storage
-    setRides([]); // Clear the rides from state
+    localStorage.removeItem('rides'); 
+    setRides([]); 
   };
 
   return (
     <div>
       <h2>Show Rides Near Me</h2>
-      <button onClick={clearRides}>Clear All Rides</button> {/* Button to clear rides */}
       {selectedRide ? (
         <div>
           <h3>Ride Details</h3>
@@ -35,8 +34,6 @@ const RideList = () => {
           <p><strong>Pick-up Preference:</strong> {selectedRide.pickupPreference}</p>
           <p><strong>Date:</strong> {selectedRide.rideDate}</p>
           <p><strong>Time:</strong> {selectedRide.rideTime}</p>
-          <p><strong>Driver Name:</strong> {selectedRide.driverName}</p>
-          <p><strong>Driver Phone Number:</strong> {selectedRide.driverPhoneNumber}</p>
           <button onClick={() => setSelectedRide(null)}>Back to Rides</button>
         </div>
       ) : rides.length > 0 ? (

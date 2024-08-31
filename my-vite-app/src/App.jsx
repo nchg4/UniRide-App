@@ -21,6 +21,10 @@ const App = () => {
     setUserInfo(null); 
   };
 
+  const handleRideJoined = (newRide) => {
+    // Logic to update the profile or any other state if needed
+  };
+
   return (
     <Router>
       <Header /> 
@@ -66,7 +70,7 @@ const App = () => {
         />
         <Route
           path="/join-ride"
-          element={isLoggedIn ? <JoinRide userInfo={userInfo} /> : <Navigate to="/login" />}
+          element={isLoggedIn ? <JoinRide userInfo={userInfo} onRideJoined={handleRideJoined} /> : <Navigate to="/login" />}
         />
         <Route
           path="/profile"

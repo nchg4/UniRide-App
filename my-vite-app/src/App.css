@@ -7,7 +7,7 @@ body {
 }
 
 nav {
-  background-color: #04f07a; 
+  background-color: #000000; 
   padding: 10px;
   display: flex;
   justify-content: space-around;
@@ -22,16 +22,16 @@ nav a {
 }
 
 nav a.active {
-  background-color: #0ae075; 
+  background-color: #000000; 
 }
 
 nav a:hover {
-  background-color: #48bb78; 
+  background-color: #232926; 
   color: #ffffff; /* Set text color to white on hover */
 }
 
 h1, h2 {
-  color: #0ae075; /* Changed to the desired color */
+  color: #000000; /* Changed to the desired color */
   text-align: center; /* Centered the text */
 }
 
@@ -65,7 +65,7 @@ form input:focus, form select:focus, form button:focus {
 }
 
 form button {
-  background-color: #ed5700; 
+  background-color: #000000; 
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
@@ -73,7 +73,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #db600d; 
+  background-color: #3b3a39; 
 }
 
 div {
@@ -86,7 +86,7 @@ div {
 }
 
 button {
-  background-color: #ed5700; 
+  background-color: #000000; 
   color: white;
   font-weight: bold;
   padding: 10px 20px;
@@ -97,7 +97,7 @@ button {
 }
 
 button:hover {
-  background-color: #db600d; 
+  background-color: #3b3a39; 
 }
 
 ul {

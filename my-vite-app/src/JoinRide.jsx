@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinRide = ({ userInfo }) => {
+const JoinRide = ({ userInfo, onRideJoined }) => {
   const [rides, setRides] = useState([]);
   const [selectedRide, setSelectedRide] = useState('');
 
@@ -28,6 +28,14 @@ const JoinRide = ({ userInfo }) => {
     allRides[rideIndex] = ride;
     localStorage.setItem('rides', JSON.stringify(allRides));
 
+    // Add the joined ride to the user's profile
+    const userJoinedRides = JSON.parse(localStorage.getItem('userJoinedRides')) || [];
+    userJoinedRides.push(ride);
+    localStorage.setItem('userJoinedRides', JSON.stringify(userJoinedRides));
+
+    // Call the callback to update the profile
+    onRideJoined(ride);
+
     alert('You have joined the ride.');
   };
 
@@ -46,7 +54,7 @@ const JoinRide = ({ userInfo }) => {
             <button 
               onClick={() => handleJoin(index)} 
               disabled={ride.seatsAvailable <= 0} 
-              style={{ backgroundColor: '#ed5700', color: 'white' }} // Set background color to #ed5700
+              style={{ backgroundColor: 'black', color: 'white' }} // Change background to black
             >
               {ride.seatsAvailable > 0 ? 'Join this Ride' : 'No Seats Available'}
             </button>

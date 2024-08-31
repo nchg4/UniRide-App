@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import { useNavigate } from 'react-router-dom'; 
 
 const Login = ({ onLogin }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
   const [studentID, setStudentID] = useState('');
-  const [university, setUniversity] = useState(''); // State for university selection
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [university, setUniversity] = useState(''); 
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Map university to a destination (for example purposes)
     const universityDestinations = {
       'TAU': 'Tel Aviv University',
       'Hebrew U': 'Hebrew University',
@@ -19,11 +18,10 @@ const Login = ({ onLogin }) => {
     };
     const destination = universityDestinations[university] || 'Default Location';
     
-    // Simulate user info for now, you would fetch this from a server
     const user = { name, phoneNumber, studentID, destination };
-    onLogin(user); // Pass user info to App component
+    onLogin(user);
 
-    navigate('/'); // Redirect to the home page (map page) after login
+    navigate('/'); 
   };
 
   return (

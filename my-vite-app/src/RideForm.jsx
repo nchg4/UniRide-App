@@ -9,7 +9,6 @@ const RideForm = () => {
   const [rideTime, setRideTime] = useState('');
 
   useEffect(() => {
-    // Automatically set the destination from localStorage
     const selectedUniversity = localStorage.getItem('selectedUniversity');
     if (selectedUniversity) {
       setDestination(selectedUniversity);
@@ -20,12 +19,10 @@ const RideForm = () => {
     e.preventDefault();
     const ride = { destination, carDetails, seatsAvailable, pickupPreference, rideDate, rideTime };
 
-    // Save the ride to localStorage
     const existingRides = JSON.parse(localStorage.getItem('rides')) || [];
     existingRides.push(ride);
     localStorage.setItem('rides', JSON.stringify(existingRides));
 
-    // Reset the form
     setCarDetails('');
     setSeatsAvailable(0);
     setPickupPreference('');
@@ -34,8 +31,8 @@ const RideForm = () => {
   };
 
   const today = new Date();
-  const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // Sunday
-  const endOfWeek = new Date(today.setDate(startOfWeek.getDate() + 6)); // Saturday
+  const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); 
+  const endOfWeek = new Date(today.setDate(startOfWeek.getDate() + 6)); 
 
   const formattedStartDate = startOfWeek.toISOString().split('T')[0];
   const formattedEndDate = endOfWeek.toISOString().split('T')[0];
@@ -62,7 +59,7 @@ const RideForm = () => {
           type="number"
           value={seatsAvailable}
           onChange={(e) => {
-            const value = Math.max(0, Math.min(9, e.target.value)); // Limit between 0 and 9
+            const value = Math.max(0, Math.min(9, e.target.value)); 
             setSeatsAvailable(value);
           }}
           required
@@ -83,8 +80,8 @@ const RideForm = () => {
           type="date"
           value={rideDate}
           onChange={(e) => setRideDate(e.target.value)}
-          min={formattedStartDate} // Set minimum date to start of the week
-          max={formattedEndDate} // Set maximum date to end of the week
+          min={formattedStartDate} 
+          max={formattedEndDate} 
           required
         />
       </div>
