@@ -1,0 +1,15 @@
+/* Header.css */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #ed5700; /* Light orange */
+    font-size: 36px;
+    margin: 0;
+    font-weight: 100; /* Added for super thin font */
+  }
